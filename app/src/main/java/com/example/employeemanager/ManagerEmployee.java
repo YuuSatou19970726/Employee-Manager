@@ -28,6 +28,10 @@ public class ManagerEmployee extends AppCompatActivity {
             {
                 tvText.setText("こんにちは " + manager);
             }
+            if (manager.equalsIgnoreCase("Tai Anh"))
+            {
+                tvText.setText("Hi! " + manager);
+            }
         }
         else
         {
