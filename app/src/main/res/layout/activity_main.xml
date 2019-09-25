@@ -54,6 +54,7 @@
         android:layout_marginRight="15dp"
 
         android:hint="Password"
+        android:password="true"
         android:textSize="25dp"
         android:padding="10dp"/>
 
