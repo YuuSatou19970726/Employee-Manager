@@ -22,9 +22,12 @@ public class ManagerEmployee extends AppCompatActivity {
         String password = getIntent().getExtras().getString("PASSWORD_ADMIN");
         String manager = getIntent().getExtras().getString("MANAGER_ADMIN");
 
-        if (user.equals("admin") && password.equals("admin") &&manager.equals("London"))
+        if (user.equals("admin") && password.equals("admin"))
         {
-            tvText.setText("Login Complete");
+            if (manager.equalsIgnoreCase("Dung Nguyen"))
+            {
+                tvText.setText("こんにちは " + manager);
+            }
         }
         else
         {
