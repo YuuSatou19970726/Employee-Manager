@@ -1,24 +1,28 @@
 package com.example.employeemanager;
 
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+public class EmployeeAdapter extends BaseAdapter {
 
-public class EmployeeAdapter extends RecyclerView.Adapter {
-    @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public int getCount() {
+        return 0;
+    }
+
+    @Override
+    public Object getItem(int position) {
         return null;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
+    public long getItemId(int position) {
+        return 0;
     }
 
     @Override
-    public int getItemCount() {
-        return 0;
+    public View getView(int position, View convertView, ViewGroup parent) {
+        return null;
     }
 }
