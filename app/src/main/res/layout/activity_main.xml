@@ -62,24 +62,6 @@
         android:textColor="#000000"
         android:padding="10dp"/>
 
-    //Enter manager name
-    <EditText
-        android:id="@+id/et_manager"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        app:layout_constraintTop_toBottomOf="@id/et_password"
-
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="15dp"
-
-        android:hint="Manager Name"
-        android:textSize="25dp"
-        android:textColor="#000000"
-        android:padding="10dp"/>
-
     //CheckBox Remember Account
     <CheckBox
         android:id="@+id/cb_remember"
@@ -87,7 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        app:layout_constraintTop_toBottomOf="@id/et_manager"
+        app:layout_constraintTop_toBottomOf="@id/et_password"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
 
