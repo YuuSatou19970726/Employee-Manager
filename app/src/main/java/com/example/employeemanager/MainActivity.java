@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText etUser, etPassword, etManager;
+    private EditText etUser, etPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
         etUser = findViewById(R.id.et_user);
         etPassword = findViewById(R.id.et_password);
-        etManager = findViewById(R.id.et_manager);
     }
 
     public void onButtonLogin(View view) {
