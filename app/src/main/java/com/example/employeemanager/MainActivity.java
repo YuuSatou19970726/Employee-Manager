@@ -41,10 +41,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Account account = dataSnapshot.getValue(Account.class);
-                if (account.getPassWord().equals(passWord)){
+                if (account != null && account.getPassWord().equals(passWord)){
                     // intent cau noi cac layout
                     Intent intent = new Intent(MainActivity.this, ManagerEmployeeFragment.class);
                     startActivity(intent);
+                }
+                else {
+                    return;
                 }
             }
 
