@@ -1,16 +1,25 @@
 package com.example.employeemanager;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.employeemanager.scheme.Account;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
+
+    private DatabaseReference databaseReference;
 
     private EditText etUser, etPassword;
 
@@ -21,18 +30,29 @@ public class MainActivity extends AppCompatActivity {
 
         etUser = findViewById(R.id.et_user);
         etPassword = findViewById(R.id.et_password);
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-        myRef.setValue("Hello, World!");
     }
 
     public void onButtonLogin(View view) {
 
-        // intent cau noi cac layout
-        Intent intent = new Intent(MainActivity.this, ManagerEmployeeFragment.class);
-        startActivity(intent);
+        String userName = etUser.getText().toString();
+        final String passWord = etPassword.getText().toString();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("account").child(userName);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Account account = dataSnapshot.getValue(Account.class);
+                if (account.getPassWord().equals(passWord)){
+                    // intent cau noi cac layout
+                    Intent intent = new Intent(MainActivity.this, ManagerEmployeeFragment.class);
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                return;
+            }
+        });
     }
 
     public void onButtonList(View view) {
