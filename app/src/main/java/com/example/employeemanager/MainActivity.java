@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         ProgressBar progressBar = new ProgressBar(MainActivity.this);
         final AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this)
                 .setView(progressBar)
-                .setCancelable(false) // không cho phép hủy khi đang loading
+                .setCancelable(false) // do not allow canceling while loading
                 .create();
         alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         alertDialog.show();
