@@ -1,6 +1,7 @@
 package com.example.employeemanager;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,16 +9,21 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.employeemanager.scheme.Account;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,12 +42,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(MainActivity.this);
+
+        accountFireBase();
     }
 
     public void onButtonLogin(View view) {
 
-        String userName = etUser.getText().toString();
+        final String userName = etUser.getText().toString();
         final String passWord = etPassword.getText().toString();
+
 
         ProgressBar progressBar = new ProgressBar(MainActivity.this);
         final AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this)
@@ -51,27 +60,64 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         alertDialog.show();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("account").child(userName);
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference.child("account").addChildEventListener(new ChildEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Account account = dataSnapshot.getValue(Account.class);
-                if (account != null && account.getPassWord().equals(passWord)){
-                    // intent cau noi cac layout
-                    Intent intent = new Intent(MainActivity.this, ManagerEmployeeFragment.class);
-                    startActivity(intent);
-                    alertDialog.dismiss();
-                }
-                else {
-                    alertDialog.dismiss();
-                    return;
-                }
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("account").child(dataSnapshot.getKey());
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Account account = dataSnapshot.getValue(Account.class);
+                        if (account != null && account.getUserName().equals(userName)){
+                            if (account.getPassWord().equals(passWord)){
+
+                                Toast.makeText(MainActivity.this, "login success", Toast.LENGTH_SHORT).show();
+                                // intent cau noi cac layout
+                                Intent intent = new Intent(MainActivity.this, ManagerEmployeeFragment.class);
+                                startActivity(intent);
+                                alertDialog.dismiss();
+                            }
+                            else {
+                                Toast.makeText(MainActivity.this, "incorrect password please try again", Toast.LENGTH_LONG).show();
+                                etPassword.setText("");
+                                alertDialog.dismiss();
+                                return;
+                            }
+                        }
+                        else if (account ==null){
+                            Toast.makeText(MainActivity.this, "your account is not registered", Toast.LENGTH_LONG).show();
+                            alertDialog.dismiss();
+                            return;
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        alertDialog.dismiss();
+                        return;
+                    }
+                });
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                alertDialog.dismiss();
-                return;
+
             }
         });
     }
@@ -79,5 +125,9 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonList(View view) {
         Intent intent = new Intent(MainActivity.this, EmployeeList.class);
         startActivity(intent);
+    }
+
+    public void accountFireBase(){
+
     }
 }
