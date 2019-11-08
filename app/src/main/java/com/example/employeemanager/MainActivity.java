@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -22,8 +21,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // activity library ButterKnife
         ButterKnife.bind(MainActivity.this);
     }
 
@@ -50,18 +48,22 @@ public class MainActivity extends AppCompatActivity {
         final String passWord = etPassword.getText().toString();
 
 
+        // wait function
         ProgressBar progressBar = new ProgressBar(MainActivity.this);
         final AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this)
                 .setView(progressBar)
-                .setCancelable(false)
+                .setCancelable(false) // không cho phép hủy khi đang loading
                 .create();
         alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         alertDialog.show();
 
+        // get data from FireBase
         databaseReference = FirebaseDatabase.getInstance().getReference();
+        // get list of data in the account
         databaseReference.child("account").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                //from list of account, get the key and use it to call the value you need
                 databaseReference = FirebaseDatabase.getInstance().getReference().child("account").child(dataSnapshot.getKey());
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                             if (account.getPassWord().equals(passWord)){
 
                                 Toast.makeText(MainActivity.this, "login success", Toast.LENGTH_SHORT).show();
-                                // intent cau noi cac layout
+                                // intent bridges the layouts
                                 Intent intent = new Intent(MainActivity.this, ManagerEmployeeFragment.class);
                                 startActivity(intent);
                                 alertDialog.dismiss();
