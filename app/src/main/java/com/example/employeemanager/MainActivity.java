@@ -42,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(MainActivity.this);
-
-        accountFireBase();
     }
 
     public void onButtonLogin(View view) {
@@ -125,9 +123,5 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonList(View view) {
         Intent intent = new Intent(MainActivity.this, EmployeeList.class);
         startActivity(intent);
-    }
-
-    public void accountFireBase(){
-
     }
 }
