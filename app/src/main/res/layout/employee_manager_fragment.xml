@@ -1,130 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-
-        android:id="@+id/tv_ten_manager"
-        android:layout_width="wrap_content"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tên     :"
-        android:textSize="20dp"/>
+        app:tabMode="fixed"
+        app:tabGravity="fill"/>
 
-    <EditText
-        android:id="@+id/et_ten"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tv_ten_manager"
-        android:layout_alignBaseline="@id/tv_ten_manager"/>
-
-    <TextView
-        android:id="@+id/tv_msnv_manager"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBaseline="@id/tv_ten_manager"
-        android:text="MSNV:"
-        android:layout_marginRight="100dp"
-        android:textSize="18dp"/>
-
-    <EditText
-        android:id="@+id/et_msnv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBaseline="@+id/tv_msnv_manager"
-        android:layout_marginRight="80dp" />
-
-    <TextView
-        android:id="@+id/tv_email_manager"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_ten_manager"
-        android:text="Email  :"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"/>
-
-    <EditText
-        android:id="@+id/et_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tv_email_manager"
-        android:layout_alignBaseline="@+id/tv_email_manager"/>
-
-    <TextView
-        android:id="@+id/tv_sdt_manager"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="100dp"
-        android:layout_below="@+id/tv_msnv_manager"
-        android:text="SĐT:"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"/>
-
-    <EditText
-        android:id="@+id/et_sdt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBaseline="@+id/tv_sdt_manager"
-        android:layout_marginRight="80dp"/>
-
-    <TextView
-        android:id="@+id/tv_diachi_manager"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Địa chỉ:"
-        android:textSize="20dp"
-        android:layout_below="@+id/tv_email_manager"
-        android:layout_marginTop="10dp"/>
-
-    <EditText
-        android:id="@+id/et_diachi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/tv_diachi_manager"
-        android:layout_alignBaseline="@id/tv_diachi_manager"/>
-
-    <TextView
-        android:id="@+id/tv_thamnien_manager"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:text="TN:"
-        android:textSize="20dp"
-        android:layout_below="@id/tv_sdt_manager"
-        android:layout_marginRight="100dp"
-        android:layout_marginTop="10dp"/>
-
-    <EditText
-        android:id="@+id/et_thamnien"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBaseline="@id/tv_thamnien_manager"
-        android:layout_marginRight="80dp"/>
-
-    <TextView
-        android:id="@+id/tv_mucluong_manager"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mức lương:"
-        android:layout_below="@id/tv_diachi_manager"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"/>
-
-    <EditText
-        android:id="@+id/et_mucluong"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tv_mucluong_manager"
-        android:layout_alignBaseline="@id/tv_mucluong_manager"/>
-
-
-
-</RelativeLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+</LinearLayout>

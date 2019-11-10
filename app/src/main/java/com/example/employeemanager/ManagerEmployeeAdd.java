@@ -22,8 +22,6 @@ public class ManagerEmployeeAdd extends Fragment {
                              @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.employee_manager_add, container, false);
 
-        tvText = view.findViewById(R.id.tv_text);
-
         return view;
     }
 
@@ -33,7 +31,6 @@ public class ManagerEmployeeAdd extends Fragment {
 
     public interface ButtonFragmentListener{
         public void onAddSuccess();
-        public void onListSuccess();
         public void onResetSuccess();
     }
 }

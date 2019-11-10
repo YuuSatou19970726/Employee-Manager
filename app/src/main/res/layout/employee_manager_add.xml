@@ -11,13 +11,13 @@
         android:layout_height="wrap_content"
         android:text="Thông tin nhân viên"
         android:layout_centerHorizontal="true"
-        android:textSize="40dp"
-        android:padding="30dp"/>
+        android:textSize="30dp"
+        android:padding="10dp"/>
 
     <EditText
+        android:id="@+id/et_hoten"
         android:layout_marginTop="30dp"
         android:background="@drawable/drawable_add"
-        android:id="@+id/et_hoten"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Họ tên"
@@ -27,70 +27,59 @@
         android:layout_marginRight="10dp"/>
 
     <EditText
+        android:id="@+id/et_ntns_add"
         android:layout_marginTop="10dp"
         android:background="@drawable/drawable_add"
-        android:id="@+id/et_msnv_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/et_hoten"
-        android:hint="Msnv"
+        android:hint="Ngày tháng năm sinh"
         android:textSize="25dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"/>
 
     <EditText
-        android:layout_marginTop="10dp"
-        android:background="@drawable/drawable_add"
-        android:id="@+id/et_email_add"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/et_msnv_add"
-        android:hint="Email"
-        android:textSize="25dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"/>
-
-    <EditText
-        android:layout_marginTop="10dp"
-        android:background="@drawable/drawable_add"
         android:id="@+id/et_diachi"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/drawable_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_email_add"
+        android:layout_below="@+id/et_ntns_add"
         android:hint="Địa chỉ"
         android:textSize="25dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"/>
 
     <EditText
+        android:id="@+id/et_email_add"
         android:layout_marginTop="10dp"
         android:background="@drawable/drawable_add"
-        android:id="@+id/et_sdt_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_diachi"
+        android:layout_below="@id/et_diachi"
+        android:hint="Email"
+        android:textSize="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    <EditText
+        android:id="@+id/et_sdt_add"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/drawable_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_email_add"
         android:hint="Số điện thoại"
         android:textSize="25dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"/>
 
     <EditText
-        android:layout_marginTop="10dp"
-        android:background="@drawable/drawable_add"
-        android:id="@+id/et_mucluong_add"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_sdt_add"
-        android:hint="Mức lương"
-        android:textSize="25dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"/>
-
-    <EditText
         android:id="@+id/et_thamnien_add"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_mucluong_add"
+        android:layout_below="@id/et_sdt_add"
         android:hint="Thâm niên"
         android:textSize="25dp"
         android:background="@drawable/drawable_add"
@@ -98,24 +87,47 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"/>
 
+    <EditText
+        android:id="@+id/et_mucluong_add"
+
+        android:layout_marginTop="10dp"
+        android:background="@drawable/drawable_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_thamnien_add"
+        android:hint="Mức lương"
+        android:textSize="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_mucluong_add"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"/>
+
     <Button
         android:id="@+id/bt_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="add"
-        android:textSize="20dp"
-        android:layout_below="@+id/et_thamnien_add"
+        android:layout_toLeftOf="@+id/tv_hint"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"/>
+        android:layout_marginRight="50dp"
+        android:text="ADD"
+        android:textSize="20dp"
+        android:layout_below="@+id/et_mucluong_add"/>
 
     <Button
-        android:id="@+id/bt_delete"
+        android:id="@+id/bt_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_thamnien_add"
-        android:layout_alignBaseline="@+id/bt_add"
-        android:layout_centerHorizontal="true"
-        android:text="delete"
+        android:layout_below="@+id/et_mucluong_add"
+        android:layout_toRightOf="@+id/tv_hint"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:text="RESET"
         android:textSize="20dp"/>
 
 </RelativeLayout>

@@ -3,9 +3,11 @@ package com.example.employeemanager;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -46,22 +48,14 @@ public class ManagerEmployeeFragment extends AppCompatActivity {
                         }
 
                         @Override
-                        public void onListSuccess() {
-                            Toast.makeText(ManagerEmployeeFragment.this, "onButtonClickList",
-                                    Toast.LENGTH_LONG).show();
-                        }
-
-                        @Override
                         public void onResetSuccess() {
                             Toast.makeText(ManagerEmployeeFragment.this, "onButtonClickReset",
                                     Toast.LENGTH_LONG).show();
                         }
                     });
                     return buttonFragmentAdd;
-                case 1:
-                    return new ManagerEmployeeList();
                 default:
-                    return new ErrorFragment();
+                    return new ManagerEmployeeList();
             }
         }
 
