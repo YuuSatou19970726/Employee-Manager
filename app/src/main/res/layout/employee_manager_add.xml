@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -16,7 +15,7 @@
 
     <EditText
         android:id="@+id/et_hoten"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/drawable_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -100,21 +99,23 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"/>
 
-    <TextView
-        android:id="@+id/tv_hint"
+    <Button
+        android:id="@+id/bt_return"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_mucluong_add"
         android:layout_marginTop="30dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:text="RETURN"
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/bt_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/tv_hint"
+        android:layout_toLeftOf="@+id/bt_return"
         android:layout_marginTop="30dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginRight="25dp"
         android:text="ADD"
         android:textSize="20dp"
         android:layout_below="@+id/et_mucluong_add"/>
@@ -124,9 +125,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_mucluong_add"
-        android:layout_toRightOf="@+id/tv_hint"
+        android:layout_toRightOf="@+id/bt_return"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="25dp"
         android:text="RESET"
         android:textSize="20dp"/>
 
