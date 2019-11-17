@@ -18,8 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ManagerEmployeeAdd"/>
-        <activity android:name=".ManagerEmployeeList"/>
         <activity android:name=".ManagerEmployeeFragment"/>
         <activity android:name=".EmployeeList"/>
     </application>
