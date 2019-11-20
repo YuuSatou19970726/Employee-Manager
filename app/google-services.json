@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "21487624749-vj7f6hth35hc4t86rnuk3kgrqom0gs85.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.employeemanager",
+            "certificate_hash": "31286d130627cfeeaf45988787a21d95e3071d00"
+          }
+        },
+        {
           "client_id": "21487624749-2104bp7tiiivjoji39nnihqlhkna95vm.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

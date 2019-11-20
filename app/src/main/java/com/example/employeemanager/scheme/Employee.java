@@ -15,7 +15,7 @@ public class Employee {
     private String address;
     private String email;
     private String phoneNumber;
-    private int seniority;
+    private String seniority;
     private String salary;
     private String manager;
 }

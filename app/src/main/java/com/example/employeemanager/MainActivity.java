@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -73,8 +74,14 @@ public class MainActivity extends AppCompatActivity {
                             if (account.getPassWord().equals(passWord)){
 
                                 Toast.makeText(MainActivity.this, "login success", Toast.LENGTH_SHORT).show();
+
+                                // data send on Bundle
+                                Bundle bundle = new Bundle();
+                                bundle.putString("USER_NAME_MANAGER_EMPLOYEE_FRAGMENT", userName);
+
                                 // intent bridges the layouts
                                 Intent intent = new Intent(MainActivity.this, ManagerEmployeeFragment.class);
+                                intent.putExtras(bundle);
                                 startActivity(intent);
                                 alertDialog.dismiss();
                             }
