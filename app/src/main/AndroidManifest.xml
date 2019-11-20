@@ -18,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ManagerEmployeeFragment"/>
+        <activity android:name=".ManagerEmployeeFragment"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".EmployeeList"/>
     </application>
 
