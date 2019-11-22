@@ -1,4 +1,5 @@
 package com.example.employeemanager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -7,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.fragment.app.ListFragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
@@ -17,6 +18,7 @@ public class ManagerEmployeeFragment extends AppCompatActivity {
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private PagerMainAdapter pagerMainAdapter;
+    private String userManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,6 +31,9 @@ public class ManagerEmployeeFragment extends AppCompatActivity {
         viewPager.setAdapter(pagerMainAdapter);
         tabLayout = findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
+
+        //get data from MainActivity
+        userManager  = getIntent().getExtras().getString("USER_NAME_MANAGER_EMPLOYEE_FRAGMENT");
     }
 
     private class PagerMainAdapter extends FragmentPagerAdapter {
@@ -41,7 +46,7 @@ public class ManagerEmployeeFragment extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position){
                 case 0:
-                    ManagerEmployeeAdd managerEmployeeAdd = new ManagerEmployeeAdd();
+                    final ManagerEmployeeAdd managerEmployeeAdd = ManagerEmployeeAdd.newInstance(userManager);
                     managerEmployeeAdd.setButtonFragmentListener(new ManagerEmployeeAdd.ButtonFragmentListener() {
                         @Override
                         public void onAddSuccess() {
@@ -63,7 +68,7 @@ public class ManagerEmployeeFragment extends AppCompatActivity {
                     });
                     return managerEmployeeAdd;
                     default:
-                        return new ManagerEmployeeList();
+                        return ManagerEmployeeList.newInstance(userManager);
             }
         }
 
