@@ -27,7 +27,7 @@ public class Employee {
         this.email = email;
     }
 
-    public Employee(String name, String birthDay, String address, String email, String phoneNumber, String seniority, String salary) {
+    public Employee(String name, String address, String email, String phoneNumber, String seniority, String salary) {
         this.name = name;
         this.birthDay = birthDay;
         this.address = address;

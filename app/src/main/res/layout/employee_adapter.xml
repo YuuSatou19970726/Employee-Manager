@@ -3,127 +3,110 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:padding="5dp">
 
     <TextView
 
-        android:id="@+id/tv_ten_manager"
+        android:id="@+id/tv_ten_manager1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tên     :"
         android:textSize="20dp"/>
 
-    <EditText
-        android:id="@+id/et_ten"
+    <TextView
+        android:id="@+id/tv_ten_manager2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tv_ten_manager"
-        android:layout_alignBaseline="@id/tv_ten_manager"/>
+        android:layout_toRightOf="@id/tv_ten_manager1"
+        android:layout_alignBaseline="@id/tv_ten_manager1"/>
 
     <TextView
-        android:id="@+id/tv_msnv_manager"
+        android:id="@+id/tv_sdt_manager1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignBaseline="@id/tv_ten_manager"
-        android:text="MSNV:"
+        android:layout_alignBaseline="@id/tv_ten_manager1"
+        android:text="SĐT:"
         android:layout_marginRight="100dp"
         android:textSize="18dp"/>
 
-    <EditText
-        android:id="@+id/et_msnv"
+    <TextView
+        android:id="@+id/tv_sdt_manager2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignBaseline="@+id/tv_msnv_manager"
+        android:layout_alignBaseline="@+id/tv_sdt_manager1"
         android:layout_marginRight="80dp" />
 
     <TextView
-        android:id="@+id/tv_email_manager"
+        android:id="@+id/tv_email_manager1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_ten_manager"
+        android:layout_below="@+id/tv_ten_manager1"
         android:text="Email  :"
         android:textSize="20dp"
         android:layout_marginTop="10dp"/>
 
-    <EditText
-        android:id="@+id/et_email"
+    <TextView
+        android:id="@+id/tv_email_manager2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tv_email_manager"
-        android:layout_alignBaseline="@+id/tv_email_manager"/>
+        android:layout_toRightOf="@id/tv_email_manager1"
+        android:layout_alignBaseline="@+id/tv_email_manager1"/>
 
     <TextView
-        android:id="@+id/tv_sdt_manager"
+        android:id="@+id/tv_tn_manager1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="100dp"
-        android:layout_below="@+id/tv_msnv_manager"
-        android:text="SĐT:"
+        android:layout_below="@+id/tv_sdt_manager1"
+        android:text="TN:"
         android:textSize="20dp"
         android:layout_marginTop="10dp"/>
 
     <EditText
-        android:id="@+id/et_sdt"
+        android:id="@+id/tv_tn_manager2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignBaseline="@+id/tv_sdt_manager"
+        android:layout_alignBaseline="@+id/tv_tn_manager1"
         android:layout_marginRight="80dp"/>
 
     <TextView
-        android:id="@+id/tv_diachi_manager"
+        android:id="@+id/tv_diachi_manager1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Địa chỉ:"
         android:textSize="20dp"
-        android:layout_below="@+id/tv_email_manager"
+        android:layout_below="@+id/tv_email_manager1"
         android:layout_marginTop="10dp"/>
 
-    <EditText
-        android:id="@+id/et_diachi"
+    <TextView
+        android:id="@+id/tv_diachi_manager2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/tv_diachi_manager"
-        android:layout_alignBaseline="@id/tv_diachi_manager"/>
+        android:layout_toRightOf="@+id/tv_diachi_manager1"
+        android:layout_alignBaseline="@id/tv_diachi_manager1"/>
 
     <TextView
-        android:id="@+id/tv_thamnien_manager"
+        android:id="@+id/tv_muc_luong_manager1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:text="TN:"
+        android:text="Mức lương:"
         android:textSize="20dp"
-        android:layout_below="@id/tv_sdt_manager"
+        android:layout_below="@id/tv_tn_manager1"
         android:layout_marginRight="100dp"
         android:layout_marginTop="10dp"/>
 
-    <EditText
-        android:id="@+id/et_thamnien"
+    <TextView
+        android:id="@+id/tv_muc_luong_manager2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignBaseline="@id/tv_thamnien_manager"
+        android:layout_alignBaseline="@id/tv_muc_luong_manager1"
         android:layout_marginRight="80dp"/>
-
-    <TextView
-        android:id="@+id/tv_mucluong_manager"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mức lương:"
-        android:layout_below="@id/tv_diachi_manager"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"/>
-
-    <EditText
-        android:id="@+id/et_mucluong"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tv_mucluong_manager"
-        android:layout_alignBaseline="@id/tv_mucluong_manager"/>
 
 
 

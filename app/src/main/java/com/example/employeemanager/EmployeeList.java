@@ -37,7 +37,7 @@ public class EmployeeList extends AppCompatActivity {
         databaseReference.child("employee").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                //from list of account, get the key and use it to call the value you need
+                //from list of employee, get the key and use it to call the value you need
                 databaseReference = FirebaseDatabase.getInstance().getReference().child("employee").child(dataSnapshot.getKey());
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
