@@ -91,6 +91,7 @@ public class ManagerEmployeeAdd extends Fragment {
             @Override
             public void onClick(View v) {
                 if (buttonFragmentListener != null){
+
                     buttonFragmentListener.onReturnSuccess();
                 }
             }
@@ -101,6 +102,15 @@ public class ManagerEmployeeAdd extends Fragment {
             @Override
             public void onClick(View v) {
                 if (buttonFragmentListener != null){
+
+                    etName.setText("");
+                    etBirthDay.setText("");
+                    etAddress.setText("");
+                    etEmail.setText("");
+                    etPhoneNumber.setText("");
+                    etSeniority.setText("");
+                    etSalary.setText("");
+
                     buttonFragmentListener.onResetSuccess();
                 }
             }
