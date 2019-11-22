@@ -65,15 +65,9 @@ public class ManagerEmployeeAdd extends Fragment {
 
                 if (buttonFragmentListener != null){
 
-                    Employee employee = new Employee();
-                    employee.setName(name);
-                    employee.setBirthDay(birthDay);
-                    employee.setAddress(address);
-                    employee.setEmail(email);
-                    employee.setPhoneNumber(phoneNumber);
-                    employee.setSeniority(seniority);
-                    employee.setSalary(salary);
-                    employee.setManager(data);
+                    Employee employee = new Employee(
+                            name, birthDay, address, email,
+                            phoneNumber, seniority, salary, data);
 
                     // Write value to the database Employee
                     databaseReference = FirebaseDatabase.getInstance().getReference();
