@@ -68,7 +68,7 @@ public class ManagerEmployeeFragment extends AppCompatActivity {
                     });
                     return managerEmployeeAdd;
                     default:
-                        return new ManagerEmployeeList();
+                        return ManagerEmployeeList.newInstance(userManager);
             }
         }
 

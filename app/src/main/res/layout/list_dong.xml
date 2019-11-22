@@ -3,73 +3,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:padding="5dp">
 
     <TextView
-        android:id="@+id/tv_ten"
+        android:id="@+id/tv_ten1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tên: "
         android:textSize="20dp"/>
 
-    <EditText
-        android:id="@+id/et_ten"
+    <TextView
+        android:id="@+id/tv_ten2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tv_ten"
-        android:layout_alignBaseline="@id/tv_ten"/>
+        android:layout_toRightOf="@id/tv_ten1"
+        android:layout_alignBaseline="@id/tv_ten1"/>
 
     <TextView
-        android:id="@+id/tv_msnv"
+        android:id="@+id/tv_diachi1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignBaseline="@id/tv_ten"
+        android:layout_alignBaseline="@id/tv_ten2"
         android:text="MSNV:"
         android:layout_marginRight="100dp"
         android:textSize="18dp"/>
 
-    <EditText
-        android:id="@+id/et_msnv"
+    <TextView
+        android:id="@+id/tv_diachi2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignBaseline="@+id/tv_msnv"
+        android:layout_alignBaseline="@+id/tv_diachi1"
         android:layout_marginRight="80dp" />
 
     <TextView
-        android:id="@+id/tv_sdt"
+        android:id="@+id/tv_sdt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_ten"
+        android:layout_below="@+id/tv_ten1"
         android:text="SĐT:"
         android:textSize="20dp"
         android:layout_marginTop="10dp"/>
 
-    <EditText
-        android:id="@+id/et_sdt"
+    <TextView
+        android:id="@+id/tv_sdt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tv_sdt"
-        android:layout_alignBaseline="@+id/tv_sdt"/>
+        android:layout_toRightOf="@id/tv_sdt1"
+        android:layout_alignBaseline="@+id/tv_sdt1"/>
 
     <TextView
-        android:id="@+id/tv_email"
+        android:id="@+id/tv_email1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="100dp"
-        android:layout_below="@+id/tv_msnv"
+        android:layout_below="@+id/tv_diachi1"
         android:text="Email:"
         android:textSize="20dp"
         android:layout_marginTop="10dp"/>
 
-    <EditText
-        android:id="@+id/et_email"
+    <TextView
+        android:id="@+id/tv_email2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignBaseline="@+id/tv_email"
+        android:layout_alignBaseline="@+id/tv_email1"
         android:layout_marginRight="80dp"/>
 
 

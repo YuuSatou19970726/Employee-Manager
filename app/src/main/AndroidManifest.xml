@@ -21,6 +21,7 @@
         <activity android:name=".ManagerEmployeeFragment"
             android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".EmployeeList"/>
+        <activity android:name=".InfoEmployee"/>
     </application>
 
 </manifest>
