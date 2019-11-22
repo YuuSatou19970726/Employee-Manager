@@ -48,85 +48,99 @@ public class MainActivity extends AppCompatActivity {
         final String userName = etUser.getText().toString();
         final String passWord = etPassword.getText().toString();
 
+        if (etUser.getText().toString().isEmpty() && etPassword.getText().toString().isEmpty()){
+            Toast.makeText(MainActivity.this, "missing name, password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if (etUser.getText().toString().isEmpty()){
+            Toast.makeText(MainActivity.this, "missing password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if (etPassword.getText().toString().isEmpty()){
+            Toast.makeText(MainActivity.this, "missing password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if (etUser.getText().toString() != null && etPassword.getText().toString() != null){
 
-        // wait function
-        ProgressBar progressBar = new ProgressBar(MainActivity.this);
-        final AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this)
-                .setView(progressBar)
-                .setCancelable(false) // do not allow canceling while loading
-                .create();
-        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        alertDialog.show();
+            // wait function
+            ProgressBar progressBar = new ProgressBar(MainActivity.this);
+            final AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this)
+                    .setView(progressBar)
+                    .setCancelable(false) // do not allow canceling while loading
+                    .create();
+            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            alertDialog.show();
 
-        // get data from FireBase
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-        // get list of data in the account
-        databaseReference.child("account").addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                //from list of account, get the key and use it to call the value you need
-                databaseReference = FirebaseDatabase.getInstance().getReference().child("account").child(dataSnapshot.getKey());
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Account account = dataSnapshot.getValue(Account.class);
-                        if (account != null && account.getUserName().equals(userName)){
-                            if (account.getPassWord().equals(passWord)){
+            // get data from FireBase
+            databaseReference = FirebaseDatabase.getInstance().getReference();
+            // get list of data in the account
+            databaseReference.child("account").addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                    //from list of account, get the key and use it to call the value you need
+                    databaseReference = FirebaseDatabase.getInstance().getReference().child("account").child(dataSnapshot.getKey());
+                    databaseReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            Account account = dataSnapshot.getValue(Account.class);
+                            if (account != null && account.getUserName().equals(userName)){
+                                if (account.getPassWord().equals(passWord)){
 
-                                Toast.makeText(MainActivity.this, "login success", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, "login success", Toast.LENGTH_SHORT).show();
 
-                                // data send on Bundle
-                                Bundle bundle = new Bundle();
-                                bundle.putString("USER_NAME_MANAGER_EMPLOYEE_FRAGMENT", userName);
+                                    // data send on Bundle
+                                    Bundle bundle = new Bundle();
+                                    bundle.putString("USER_NAME_MANAGER_EMPLOYEE_FRAGMENT", userName);
 
-                                // intent bridges the layouts
-                                Intent intent = new Intent(MainActivity.this, ManagerEmployeeFragment.class);
-                                intent.putExtras(bundle);
-                                startActivity(intent);
-                                alertDialog.dismiss();
+                                    // intent bridges the layouts
+                                    Intent intent = new Intent(MainActivity.this, ManagerEmployeeFragment.class);
+                                    intent.putExtras(bundle);
+                                    startActivity(intent);
+                                    alertDialog.dismiss();
+                                }
+                                else {
+                                    Toast.makeText(MainActivity.this, "incorrect password please try again", Toast.LENGTH_LONG).show();
+                                    etPassword.setText("");
+                                    alertDialog.dismiss();
+                                    return;
+                                }
                             }
-                            else {
-                                Toast.makeText(MainActivity.this, "incorrect password please try again", Toast.LENGTH_LONG).show();
-                                etPassword.setText("");
+                            else{
+                                Toast.makeText(MainActivity.this, "your account is not registered", Toast.LENGTH_LONG).show();
                                 alertDialog.dismiss();
                                 return;
                             }
                         }
-                        else if (account ==null){
-                            Toast.makeText(MainActivity.this, "your account is not registered", Toast.LENGTH_LONG).show();
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
                             alertDialog.dismiss();
                             return;
                         }
-                    }
+                    });
+                }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        alertDialog.dismiss();
-                        return;
-                    }
-                });
-            }
+                @Override
+                public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                }
 
-            }
+                @Override
+                public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
 
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+                }
 
-            }
+                @Override
+                public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+                }
+            });
+        }
     }
 
     public void onButtonList(View view) {
