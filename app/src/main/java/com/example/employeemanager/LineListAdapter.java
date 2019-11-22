@@ -41,7 +41,7 @@ public class LineListAdapter extends BaseAdapter {
 
         ViewHolder viewHolder;
         if (convertView == null){
-            LayoutInflater layoutInflater =LayoutInflater.from(context);
+            LayoutInflater layoutInflater = LayoutInflater.from(context);
             convertView = layoutInflater.inflate(R.layout.list_dong, parent, false);
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
