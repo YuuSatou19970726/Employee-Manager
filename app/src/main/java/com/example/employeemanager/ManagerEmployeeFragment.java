@@ -50,8 +50,6 @@ public class ManagerEmployeeFragment extends AppCompatActivity {
                     managerEmployeeAdd.setButtonFragmentListener(new ManagerEmployeeAdd.ButtonFragmentListener() {
                         @Override
                         public void onAddSuccess() {
-                            Toast.makeText(ManagerEmployeeFragment.this, "Add Success",
-                                    Toast.LENGTH_LONG).show();
                         }
 
                         @Override
@@ -62,8 +60,6 @@ public class ManagerEmployeeFragment extends AppCompatActivity {
 
                         @Override
                         public void onResetSuccess() {
-                            Toast.makeText(ManagerEmployeeFragment.this, "Reset Success",
-                                    Toast.LENGTH_LONG).show();
                         }
                     });
                     return managerEmployeeAdd;
