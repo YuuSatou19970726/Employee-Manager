@@ -18,9 +18,10 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/et_user"
 
-        android:text="login account"
-        android:textSize="50dp"
+        android:text="employee manager"
+        android:textSize="35dp"
         android:textAllCaps="true"
+        android:padding="10dp"
 
         android:textColor="#ffffff"
         tools:ignore="MissingConstraints" />

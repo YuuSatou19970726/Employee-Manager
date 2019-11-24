@@ -99,14 +99,12 @@ public class MainActivity extends AppCompatActivity {
                                     alertDialog.dismiss();
                                 }
                                 else {
-                                    Toast.makeText(MainActivity.this, "incorrect password please try again", Toast.LENGTH_LONG).show();
-                                    etPassword.setText("");
+                                    Toast.makeText(MainActivity.this, "incorrect user or password please try again", Toast.LENGTH_LONG).show();
                                     alertDialog.dismiss();
                                     return;
                                 }
                             }
                             else{
-                                Toast.makeText(MainActivity.this, "your account is not registered", Toast.LENGTH_LONG).show();
                                 alertDialog.dismiss();
                                 return;
                             }
