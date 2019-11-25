@@ -54,8 +54,6 @@ public class ManagerEmployeeFragment extends AppCompatActivity {
 
                         @Override
                         public void onReturnSuccess() {
-                            Toast.makeText(ManagerEmployeeFragment.this, "Return Success",
-                                    Toast.LENGTH_LONG).show();
                         }
 
                         @Override
