@@ -244,31 +244,48 @@ public class ManagerEmployeeAdd extends Fragment {
 
                 if (buttonFragmentListener != null){
 
-                    if (salary != null){
-                        etSalary.setText("");
-                    }
-                    else if (seniority != null)
-                    {
-                        etSeniority.setText("");
-                    }
-                    else if (phoneNumber != null){
-                        etPhoneNumber.setText("");
-                    }
-                    else if (email != null){
-                        etEmail.setText("");
-
-                    }
-                    else if (address != null){
-                        etAddress.setText("");
-                    }
-                    else if (birthDay != null){
-                        etBirthDay.setText("");
-                    }
-                    else if (name != null){
-                        etName.setText("");
+                    if (salary.isEmpty()){
+                        if (seniority.isEmpty()){
+                            if (phoneNumber.isEmpty()){
+                                if (email.isEmpty()){
+                                    if (address.isEmpty()){
+                                        if (birthDay.isEmpty()){
+                                            if (name.isEmpty()){
+                                                Toast.makeText(getActivity(), "Empty",Toast.LENGTH_LONG).show();
+                                            }
+                                            else {
+                                                etName.setText("");
+                                                Toast.makeText(getActivity(), "Return Success",Toast.LENGTH_LONG).show();
+                                            }
+                                        }
+                                        else {
+                                            etBirthDay.setText("");
+                                            Toast.makeText(getActivity(), "Return Success",Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                    else {
+                                        etAddress.setText("");
+                                        Toast.makeText(getActivity(), "Return Success",Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                                else {
+                                    etEmail.setText("");
+                                    Toast.makeText(getActivity(), "Return Success",Toast.LENGTH_LONG).show();
+                                }
+                            }
+                            else {
+                                etPhoneNumber.setText("");
+                                Toast.makeText(getActivity(), "Return Success",Toast.LENGTH_LONG).show();
+                            }
+                        }
+                        else {
+                            etSeniority.setText("");
+                            Toast.makeText(getActivity(), "Return Success",Toast.LENGTH_LONG).show();
+                        }
                     }
                     else {
-                        return;
+                        etSalary.setText("");
+                        Toast.makeText(getActivity(), "Return Success",Toast.LENGTH_LONG).show();
                     }
 
                     buttonFragmentListener.onReturnSuccess();
