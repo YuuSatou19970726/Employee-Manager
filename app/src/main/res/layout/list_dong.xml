@@ -1,77 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="5dp">
+    android:padding="5dp"
+    >
 
     <TextView
         android:id="@+id/tv_ten1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
         android:text="Tên: "
         android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/tv_ten2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/tv_ten1"
-        android:layout_alignBaseline="@id/tv_ten1"/>
-
-    <TextView
-        android:id="@+id/tv_diachi1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBaseline="@id/tv_ten2"
-        android:text="MSNV:"
-        android:layout_marginRight="100dp"
-        android:textSize="18dp"/>
-
-    <TextView
-        android:id="@+id/tv_diachi2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBaseline="@+id/tv_diachi1"
-        android:layout_marginRight="80dp" />
+        android:layout_toLeftOf="@id/tv_sdt1"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_alignBaseline="@id/tv_ten1"
+        android:textSize="20dp"
+        android:textColor="#0A0A0A"/>
 
     <TextView
         android:id="@+id/tv_sdt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_ten1"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBaseline="@id/tv_ten2"
         android:text="SĐT:"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginRight="100dp"
+        android:textSize="18dp"/>
 
     <TextView
         android:id="@+id/tv_sdt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tv_sdt1"
-        android:layout_alignBaseline="@+id/tv_sdt1"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignBaseline="@+id/tv_sdt1"
+        android:layout_marginRight="5dp"
+        android:textSize="18dp"
+        android:textColor="#0A0A0A"/>
 
     <TextView
         android:id="@+id/tv_email1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="100dp"
-        android:layout_below="@+id/tv_diachi1"
+        android:layout_below="@+id/tv_ten1"
         android:text="Email:"
         android:textSize="20dp"
         android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/tv_email2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tv_email1"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@+id/tv_email1"
+        android:textSize="18dp"
+        android:textColor="#0A0A0A"
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_diachi1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBaseline="@+id/tv_email1"
-        android:layout_marginRight="80dp"/>
+        android:layout_below="@+id/tv_email1"
+        android:text="Địa chỉ:"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"/>
 
-
+    <TextView
+        android:id="@+id/tv_diachi2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_email1"
+        android:layout_alignBaseline="@id/tv_diachi1"
+        android:layout_toRightOf="@id/tv_diachi1"
+        android:layout_alignParentRight="true"
+        android:textSize="20dp"
+        android:textColor="#0A0A0A"
+        />
 
 </RelativeLayout>

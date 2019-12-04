@@ -18,7 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/tv_ten_manager1"
-        android:layout_alignBaseline="@id/tv_ten_manager1"/>
+        android:layout_alignBaseline="@id/tv_ten_manager1"
+        android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/tv_sdt_manager1"
@@ -26,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignBaseline="@id/tv_ten_manager1"
-        android:text="SĐT:"
+        android:text="ĐT:"
         android:layout_marginRight="100dp"
         android:textSize="18dp"/>
 
@@ -36,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignBaseline="@+id/tv_sdt_manager1"
-        android:layout_marginRight="80dp" />
+        android:textSize="18dp"/>
 
     <TextView
         android:id="@+id/tv_email_manager1"
@@ -52,26 +53,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/tv_email_manager1"
-        android:layout_alignBaseline="@+id/tv_email_manager1"/>
+        android:layout_alignBaseline="@+id/tv_email_manager1"
+        android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/tv_tn_manager1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="100dp"
-        android:layout_below="@+id/tv_sdt_manager1"
+        android:layout_below="@+id/tv_diachi_manager1"
         android:text="TN:"
         android:textSize="20dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="15dp"/>
 
     <EditText
         android:id="@+id/tv_tn_manager2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@id/tv_tn_manager1"
         android:layout_alignBaseline="@+id/tv_tn_manager1"
-        android:layout_marginRight="80dp"/>
+        android:textSize="20dp"/>
+
 
     <TextView
         android:id="@+id/tv_diachi_manager1"
@@ -87,26 +88,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/tv_diachi_manager1"
-        android:layout_alignBaseline="@id/tv_diachi_manager1"/>
+        android:layout_alignBaseline="@id/tv_diachi_manager1"
+
+        android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/tv_muc_luong_manager1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_alignBaseline="@id/tv_tn_manager1"
         android:text="Mức lương:"
         android:textSize="20dp"
-        android:layout_below="@id/tv_tn_manager1"
-        android:layout_marginRight="100dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/tv_muc_luong_manager2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@id/tv_muc_luong_manager1"
         android:layout_alignBaseline="@id/tv_muc_luong_manager1"
-        android:layout_marginRight="80dp"/>
+        android:textSize="20dp"
+        />
 
 
 
